@@ -10,9 +10,6 @@ import "../assets/css/reset.css"
 function App() {
 
     const [enabled, setEnabled] = useState(true);
-    const [user, setUser] = useState([]);
-    const [token, setToken] = useState([]);
-
 
     return (
         <>
