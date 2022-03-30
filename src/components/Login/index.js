@@ -6,6 +6,9 @@ import {Link, useNavigate} from "react-router-dom";
 import UserContext from "../Context/UserContext";
 import Input from "../Styled/Input";
 import Button from "../Styled/Button";
+import Container from "../Styled/Container";
+import FormLogin from "../Styled/FormLogin";
+import StyledLink from "../Styled/StyledLink";
 
 import logo from "../../assets/images/logo.png"
 import loading from "../../assets/images/loading.svg";
@@ -85,36 +88,5 @@ function Login({ enabled, setEnabled }) {
     )
 
 }
-
-const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-    padding: 68px 36px 0 36px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    img {
-        width: 180px;
-        height: 179px;
-        margin-bottom: 32px;
-    } 
-`
-
-const FormLogin = styled.div`
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-`
-
-const StyledLink = styled(Link)`
-    margin-top: 25px;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: #52B6FF;
-`
 
 export default Login;
