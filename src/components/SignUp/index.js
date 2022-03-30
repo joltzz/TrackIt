@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
 import Input from "../Styled/Input";
 import Button from "../Styled/Button";
@@ -62,7 +63,7 @@ function SignUp({enabled, setEnabled}){
             <Container>
                 <img src={logo} alt="trackit"/>
                 <FormLogin>
-                    <form onSubmit={handleSignUp}>
+                    <form onSubmit={handleSingUp}>
                         <Input type='email'
                         placeholder="email"
                         name="email"
@@ -99,10 +100,16 @@ function SignUp({enabled, setEnabled}){
                         </Button>
                     </form>
                 </FormLogin>
-                <StyledLink to="/" >Já possuí uma conta? Faça login aqui!</StyledLink>
+                <StyledLink to="/" ><TextoLink>Já possuí uma conta? Faça login aqui!</TextoLink></StyledLink>
             </Container>
         </>
     )
 }
+
+const TextoLink=styled.p`
+    font-family: Lexend Deca;
+    font-size: 14px;
+    line-height: 17.5px;
+`
 
 export default SignUp;

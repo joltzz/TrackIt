@@ -82,11 +82,17 @@ function Login({ enabled, setEnabled }) {
                         </Button>
                     </form>
                 </FormLogin>
-                <StyledLink to="/cadastro">Não tem uma conta? Cadastre-se!</StyledLink>
+                <StyledLink to="/cadastro"><TextoLink>Não tem uma conta? Cadastre-se!</TextoLink></StyledLink>
             </Container>
         </>
     )
 
 }
+
+const TextoLink=styled.p`
+    font-family: Lexend Deca;
+    font-size: 14px;
+    line-height: 17.5px;
+`
 
 export default Login;
