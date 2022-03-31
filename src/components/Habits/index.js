@@ -184,8 +184,18 @@ function Habits() {
                             </form>
                         </CreateHabit>
 
-                        {a}
+                        {allHabits.map((eachHabit) =>
+                            <EachHabit key={eachHabit.id}>
+                                <span> {eachHabit.name} </span>
+                                <img src={trash} alt='delete' onClick={() => deleteHabit(eachHabit)} />
 
+                                <div className="days">
+                                    {weekDays.map((days) =>
+                                        <HabitDays key={days.id} days={days} daysToDo={eachHabit.days} ></HabitDays>
+                                    )}
+                                </div>
+                            </EachHabit>
+                        )}
                     </HabitsList>
                 </Content>
             </Container>
