@@ -48,12 +48,11 @@ const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Lexend Deca';
     line-height: 22px;
-    letter-spacing: 0em;
     text-align: center;
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+
     span {
         color: #52b6ff;
     }
@@ -69,6 +68,7 @@ const TodayProgress = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
     div {
         width: 80%;
     }

@@ -28,39 +28,28 @@ function Today(){
                 }
             })
         promisse.then((response) => {
-
             for (let i = 0; i < response.data.length; i++) {
                 if (response.data[i].done === true) {
-
                     counter++;
                     setDone(true);
-
                 }
                 if ((counter / response.data.length * 100) === 0) {
-
                     setDone(false);
                     setPercentDone(0);
-
                 } else {
-
                     setPercentDone((counter / response.data.length * 100).toFixed(1));
-
                 }
             }
-
             setTodaysHabits(response.data)
-
         });
-
         promisse.catch(error => console.log(error.response.data));
-
     }, [checked]);
 
     if (!todaysHabits) {
-        return <img src={loading} alt=""/>
+        return <img src={loading}/>
     }
 
-    return (
+     return (
         <>
             <Container>
                 <TopBar />
@@ -95,6 +84,7 @@ export default Today;
 
 const Container = styled.div`
     width: 100%;
+    font-family: 'Lexend Deca';
     padding-bottom: 50px;
 `
 

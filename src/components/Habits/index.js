@@ -209,38 +209,40 @@ function Habits() {
 }
 
 
-const Container=styled.div`
+const Container = styled.div`
     padding-bottom: 90px;
+    font-family: 'Lexend Deca';
 `
-const Content=styled.div`
+const Content = styled.div`
     padding: 22px 17px;
     height: 100;
 
-    span{
-        font-size:18px;
-        color: #666666
+    span {
+        font-size: 18px;
+        color: #666666;
     }
 `
-const NavBar=styled.div`
+const NavBar = styled.div`
     color: #52B6FF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 22px
+    margin-bottom: 22px;
 
     h1{
-        font-size: 23px
+        font-size: 23px;
     }
 `
-const AddHabit=styled.button`
+const AddHabit = styled.button`
     width: 40px;
-    height:35px;
+    height: 35px;
     border-radius: 4.6px;
-    background-color: #52B6FF;
+    background-color: #52b6ff;
     font-size: 27px;
-    color: #FFF;
+    color: #fff;
+    border: none;
 `
-const CreateHabit=styled.div`
+const CreateHabit = styled.div`
     width: 100%;
     height: 180px;
     margin-bottom: 29px;
@@ -253,53 +255,57 @@ const CreateHabit=styled.div`
         display: flex;
         justify-content: flex-end;
     }
-    input{
-        width:303px;
+
+    input {
+        width: 303px;
         height: 45px;
         padding: 11px;
         font-size: 20px;
+        font-weight: 400;
+        
         border: 1px solid #d4d4d4;
         border-radius: 5px;
-
-        ::placeholder{
+        
+        ::placeholder {
             color: #dbdbdb;
         }
-        ::disabled{
+        
+        :disabled {
             background-color: #f2f2f2;
         }
     }
 `
-const DaySelect=styled.div`
+const DaySelect = styled.div`
     display: flex;
+    
 `
-const SaveButton=styled.button`
+const SaveButton = styled.button`
     width: 84px;
     height: 35px;
     background-color: #52B6FF;
     color: #fff;
     border-radius: 5px;
+    border: none;
 
     :disabled {
         opacity: 0.7;
     }
 `
-
 const CancelButton = styled.button`
     width: 84px;
     height: 35px;
     background: none;
     color: #52B6FF;
+    border: none;
 
     :disabled {
         opacity: 0.7;
     }
 `
-
 const HabitsList = styled.div`
     width: 100%;
     height: auto;
 `
-
 const EachHabit = styled.div`
     width: 100%;
     height: auto;
@@ -312,11 +318,13 @@ const EachHabit = styled.div`
     span {
         font-size: 20px;
     }
+
     img {
         position: absolute;
         top: 11px;
         right: 10px;
     }
+
     .days {
         display: flex;
     }
