@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import UserContext from "../Context/UserContext";
 
-import check from "../../assets/images/Check.svg";
+import check from "../../assets/images/check.png";
 
 
 function CheckBoxToday({ habit, setChecked, checked }) {

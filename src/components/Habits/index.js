@@ -9,7 +9,7 @@ import HabitDays from "../HabitDays";
 import UserContext from "../Context/UserContext";
 
 import loading from "../../assets/images/loading.svg";
-import trash from "../../assets/images/Trashcan.svg";
+import trash from "../../assets/images/Trashcan.png";
 
 function Habits() {
 
@@ -191,7 +191,9 @@ function Habits() {
 
                                 <div className="days">
                                     {weekDays.map((days) =>
-                                        <HabitDays key={days.id} days={days} daysToDo={eachHabit.days} ></HabitDays>
+                                        <SelectedDays>
+                                            <HabitDays key={days.id} days={days} daysToDo={eachHabit.days} ></HabitDays>
+                                        </SelectedDays>
                                     )}
                                 </div>
                             </EachHabit>
@@ -328,6 +330,11 @@ const EachHabit = styled.div`
     .days {
         display: flex;
     }
+`
+const SelectedDays=styled.div`
+    margin-top: 10px;
+    margin-right: 4px;
+    border-radius: 5px;
 `
 
 export default Habits;
