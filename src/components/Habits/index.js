@@ -5,7 +5,7 @@ import styled from "styled-components";
 import TopBar from "../TopBar";
 import Menu from "../Menu";
 import DayButton from "../DayButton";
-import HabitsDays from "../HabitsDays";
+import HabitDays from "../HabitDays";
 import UserContext from "../Context/UserContext";
 
 import loading from "../../assets/images/loading.svg";
@@ -20,9 +20,9 @@ function Habits() {
     const [disabled, setDisabled] = useState(false);
     const { token, weekDays, setWeekDays } = useContext(UserContext);
     const [allHabits, setAllHabits] = useState([]);
-    const [noHabit, setNoHabit] = useState('');
+    const [noHabbit, setNoHabbit] = useState('');
     const [update, setUpdate] = useState(false);
-    const HabitsDays = [];
+    const habitDays = [];
 
     useEffect(() => {
         const habitPromise = axios.get(URL_HABITS, {
@@ -34,7 +34,7 @@ function Habits() {
         habitPromise.then(response => {
             setAllHabits(response.data);
             if (response.data.length !== 0) {
-                setNoHabit('hidden');
+                setNoHabbit('hidden');
             }
         })
 
@@ -92,11 +92,11 @@ function Habits() {
 
         for (let i = 0; i < weekDays.length; i++) {
             if (weekDays[i].selected === true) {
-                HabitsDays.push(weekDays[i].id);
+                habitDays.push(weekDays[i].id);
             }
         }
 
-        if (HabitsDays.length === 0) {
+        if (habitDays.length === 0) {
             alert('Selecione os dias da semana para o seu hábito!')
         }
         else if (habitName === '') {
@@ -106,7 +106,7 @@ function Habits() {
             setDisabled(true);
             const promise = axios.post(URL_HABITS, {
                 name: habitName,
-                days: HabitsDays
+                days: habitDays
             },
                 {
                     headers: {
@@ -153,35 +153,35 @@ function Habits() {
             <Container>
                 <TopBar />
                 <Content>
-                    <NavBar>
+
+                    <NavBar >
                         <h1>Meus Hábitos</h1>
                         <AddHabit onClick={() => hidden === 'hidden' ? setHidden('') : setHidden('hidden')}>+</AddHabit>
                     </NavBar>
+
                     <HabitsList>
+
                         <CreateHabit className={`${hidden}`}>
+
                             <form onSubmit={handleAddHabit}>
-                                <input disabled={disabled}
-                                    type='text'
-                                    value={habitName}
-                                    onChange={e => setHabitName(e.target.value)}
-                                    placeholder="nome do hábito">
-                                </input>
+                                <input disabled={disabled} type='text' value={habitName} onChange={(e) => setHabitName(e.target.value)} placeholder="nome do hábito"></input>
+
                                 <DaySelect>
-                                    {weekDays.map((days) => {
-                                        <DayButton days={days}
-                                            disabled={disabled}
-                                            type='button'
-                                            key={days.id}>
-                                    </DayButton>
-                                    })}
+                                    {weekDays.map((days) =>
+                                        <DayButton days={days} disabled={disabled} type='button' key={days.id}> </DayButton>
+                                    )}
                                 </DaySelect>
+
                                 <div className="buttons">
+
                                     <CancelButton disabled={disabled} type='button' onClick={cancel}> Cancelar </CancelButton>
                                     <SaveButton disabled={disabled}>
                                         {!disabled ? "Salvar" : <Loader type="ThreeDots" color="#FFF" height={10} width={38} />}
                                     </SaveButton>
+
                                 </div>
                             </form>
+
                         </CreateHabit>
 
                         {allHabits.map((eachHabit) =>
@@ -196,12 +196,18 @@ function Habits() {
                                 </div>
                             </EachHabit>
                         )}
+
                     </HabitsList>
+
+                    <span className={`${noHabbit}`} >Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</span>
+
                 </Content>
+                <Menu />
             </Container>
         </>
     )
 }
+
 
 const Container=styled.div`
     padding-bottom: 90px;

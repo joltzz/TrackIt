@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-function HabitsDays(){
+function HabitDays(){
     
     let selected=false;
 
@@ -18,7 +18,7 @@ function HabitsDays(){
     )
 }
 
-export default HabitsDays;
+export default HabitDays;
 
 
 const daysToDo=styled.div`

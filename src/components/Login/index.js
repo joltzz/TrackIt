@@ -21,7 +21,7 @@ function Login({ enabled, setEnabled }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    // const { setUser, setToken } = useContext(UserContext);
+    const { setUser, setToken } = useContext(UserContext);
 
     function handleLogin(e) {
         e.preventDefault();
@@ -41,8 +41,8 @@ function Login({ enabled, setEnabled }) {
 
             promisse.then(response => {
                 setEnabled(true);
-                // setUser(response.data);
-                // setToken(response.data.token);
+                setUser(response.data);
+                setToken(response.data.token);
                 navigate('/hoje');
 
             });
@@ -89,10 +89,10 @@ function Login({ enabled, setEnabled }) {
 
 }
 
+export default Login;
+
 const TextoLink=styled.p`
     font-family: Lexend Deca;
     font-size: 14px;
     line-height: 17.5px;
 `
-
-export default Login;
