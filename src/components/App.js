@@ -4,12 +4,12 @@ import { useState } from "react";
 import updateLocale from 'dayjs/plugin/updateLocale';
 import dayjs from "dayjs";
 
-import UserContext from "../Context/UserContext";
+import UserContext from "./Context/UserContext";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Habits from "../Habits";
-import Today from "../Today";
-import History from "../History";
+import Habits from "./Habits";
+import Today from "./Today";
+import History from "./History";
 
 import "../assets/css/style.css"
 import "../assets/css/reset.css"

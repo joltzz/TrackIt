@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useContext, useEffect, useState } from "react";
 import dayjs from 'dayjs';
 
-import Topbar from "../Topbar";
+import TopBar from "../Topbar";
 import Menu from "../Menu";
 import UserContext from "../Context/UserContext";
 import CheckBoxToday from "../CheckBoxToday";
@@ -57,13 +57,13 @@ function Today(){
     }, [checked]);
 
     if (!todaysHabits) {
-        return <img src={loading}/>
+        return <img src={loading} alt=""/>
     }
 
     return (
         <>
             <Container>
-                <Topbar />
+                <TopBar />
                 <TodayContent>
                     <Day>{date}</Day>
                     <Progress done={done} >{!done ? "Nenhum hábito concluído ainda" : `${percentDone}% dos hábitos concluídos`}</Progress>

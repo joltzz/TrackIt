@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 
-import TopBar from "../TopBar";
+import TopBar from "../Topbar";
 import Menu from "../Menu";
 import DayButton from "../DayButton";
 import HabitDays from "../HabitDays";
@@ -176,7 +176,7 @@ function Habits() {
 
                                     <CancelButton disabled={disabled} type='button' onClick={cancel}> Cancelar </CancelButton>
                                     <SaveButton disabled={disabled}>
-                                        {!disabled ? "Salvar" : <Loader type="ThreeDots" color="#FFF" height={10} width={38} />}
+                                        {!disabled ? "Salvar" : <img src={loading} alt="" />}
                                     </SaveButton>
 
                                 </div>

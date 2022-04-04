@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-function HabitDays(){
+function HabitDays({daysToDo, days}){
     
     let selected=false;
 
@@ -11,9 +11,9 @@ function HabitDays(){
 
     return(
         <>
-            <daysToDo selected={selected}>
+            <DaysToDo selected={selected}>
                 {days.name}
-            </daysToDo>
+            </DaysToDo>
         </>
     )
 }
@@ -21,7 +21,7 @@ function HabitDays(){
 export default HabitDays;
 
 
-const daysToDo=styled.div`
+const DaysToDo=styled.div`
 
     width: 30px;
     height:30px;

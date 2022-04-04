@@ -6,7 +6,7 @@ import UserContext from "../Context/UserContext";
 
 function TopBar(){
 
-    const {user} =useContext(UserContext);
+    const {user} = useContext(UserContext);
 
     return (
         <>
